@@ -17,32 +17,38 @@ Route::get('/', function () {
 	return view('landing');
 });
 
-//PASANG MIDDLEWARE CHECK LOGIN
-
-Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('checkLogin');
-// Route::get('/', 'HomeController@index')->name('home');
-
-Route::get('/testsrq', 'TestController@indexsrq')->middleware('checkLogin');
-Route::get('/testbdi', 'TestController@indexbdi')->middleware('checkLogin');
-Route::get('/testdass', 'TestController@indexdass')->middleware('checkLogin');
-
-Route::post('/test/insert', 'ResultController@store')->name('test_insert');
+Route::group(['middleware' => ['checkLogin']], function(){
+	Route::post('/test/insert', 'ResultController@store')->name('test_insert');
 
 // Route::get('/result', 'ResultController@index')->name('result');
 
-Route::get('/resultsrq', 'ResultController@srq')->name('resultSrq');
+	Route::get('/resultsrq', 'ResultController@srq')->name('resultSrq');
+	Route::get('/resultbdi', 'ResultController@bdi')->name('resultBdi');
+	Route::get('/resultdass', 'ResultController@dass')->name('resultDass');
 
-Route::get('/consent', 'ResultController@consent')->name('consent');
+	Route::get('/consentsrq', 'ConsentController@consentsrq')->name('consentsrq');
+	Route::get('/consentdass', 'ConsentController@consentdass')->name('consentdass');
+	Route::get('/consentbdi', 'ConsentController@consentbdi')->name('consentbdi');
 
-Route::post('/consent/insert', 'ConsentController@store')->name('consent_insert');
+	Route::post('/consent/insert', 'ConsentController@store')->name('consent_insert');
+
+	Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+
+	Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/', 'HomeController@index')->name('home');
+
+	Route::get('/testsrq', 'TestController@indexsrq');
+	Route::get('/testbdi', 'TestController@indexbdi');
+	Route::get('/testdass', 'TestController@indexdass');
+});
 
 
 
 Route::group(['middleware' => ['auth', 'adminMiddleware']], function(){
+
+	Route::get('/', 'TestController@srqtest');
 
 	Route::get('srqtest', 'TestController@srqtest')->name('test.srq');
 	Route::get('bditest', 'TestController@bditest')->name('test.bdi');
@@ -52,13 +58,28 @@ Route::group(['middleware' => ['auth', 'adminMiddleware']], function(){
 	Route::get('addbditest', 'TestController@addbditest');
 	Route::get('adddasstest', 'TestController@adddasstest');
 
-	Route::post('/addtest', 'TestController@addTestQuestion');
-	Route::post('/addtestbdi', 'TestController@addTestBdi');
-	Route::get('srqtest/{id}', 'TestController@destroy')->name('test.delete');
-	Route::get('srqtestresult', 'ResultController@srqtestresult');
-	Route::get('testdetail/{id}', 'ResultController@srqtestdetail')->name('testdetail');
 
-	// Route::get('printtest', 'ResultController@printsrq');
+	//addtest route is to add question for both srq and dass test
+	Route::post('/addtest', 'TestController@addTestQuestion');
+
+	//addtestbdi route is espescially for bdi
+	Route::post('/addtestbdi', 'TestController@addTestBdi');
+
+	Route::get('test/{id}', 'TestController@destroy')->name('test.delete');
+
+	Route::get('srqtestresult', 'ResultAdminController@srq');
+	Route::get('dasstestresult', 'ResultAdminController@dass');
+	Route::get('bditestresult', 'ResultAdminController@bdi');
+
+	Route::get('srqdetail/{id}', 'ResultController@srqtestdetail')->name('srqtestdetail');
+	Route::get('bdidetail/{id}', 'ResultController@bditestdetail')->name('bditestdetail');
+	Route::get('dassdetail/{id}', 'ResultController@dasstestdetail')->name('dasstestdetail');
+	Route::get('dassedit/{id}', 'ResultController@dasstestedit')->name('dassedit');
+	Route::post('scoredass', 'ResultController@scoredass')->name('scoredass');
+
+	Route::post('dassupdate', 'ResultController@dasstestupdate')->name('dassupdate');
+
+	Route::get('printsrq', 'ResultController@printsrq');
 
 });
 

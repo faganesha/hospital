@@ -75,7 +75,7 @@
                               <label class="form-check-label" for="lakilaki">Laki Laki</label>
                           </div>
                           <div class="form-check form-check-inline  @error('gender') is-invalid @enderror">
-                              <input class="form-check-input" type="radio" name="gender" id="perempuan" value="Perepmuan">
+                              <input class="form-check-input" type="radio" name="gender" id="perempuan" value="Perempuan">
                               <label class="form-check-label" for="Perepmuan">Perempuan</label>
                           </div>
 

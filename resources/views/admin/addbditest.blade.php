@@ -61,7 +61,7 @@
 		</div>
 
 		<input type="hidden" name="category_id" value="3">
-		<input type="submit" value="Submit" name="submit">
+		<input type="submit" class="btn btn-primary" value="Submit" name="submit">
 	</form>
 
 </div>

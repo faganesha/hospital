@@ -7,9 +7,13 @@
 @stop
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid"> 
 
-	<table class="table table-bordered">
+	<button onclick="location.href='/adddasstest'"  class="btn btn-primary " type="button" >Tambah</button>
+
+	<br><br>
+
+	<table class="table table-bordered table-hover mydatatable" id="example">
 		<thead class="thead-dark">
 			<tr>
 				<th scope="col"> 
@@ -56,14 +60,18 @@
 			</td>
 		</tr>
 		@endforeach
-		<tr>
-			<button onclick="location.href='/adddasstest'" type="button" >Tambah</button>
-		</tr>
-
 	</table>
 </div>
 @stop
 
 @section('css')
 <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+<script>
+	$('.mydatatable').DataTable({
+		 "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
+	});
+</script>
 @stop

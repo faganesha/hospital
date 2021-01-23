@@ -29,16 +29,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                           <li class="nav-item">
-                            <a class="nav-link active" href="/home" data-scroll-nav="0">Beranda</a>
+                            <a class="nav-link active" href="/home" >Beranda</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/home#skriningMandiri" data-scroll-nav="1">Skrining Mandiri</a>
+                            <a class="nav-link" href="/home#skriningMandiri" >Skrining Mandiri</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/home#tentangKami" data-scroll-nav="2">Tentang Kami</a>
+                            <a class="nav-link" href="/home#tentangKami" >Tentang Kami</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/home#kontakKami" data-scroll-nav="3">Kontak Kami</a>
+                            <a class="nav-link" href="/home#kontakKami" >Kontak Kami</a>
                         </li>
 
                     </li>
@@ -69,7 +69,7 @@
                                 <div class="row">  
                                     <div class="col-lg-8 col-sm-8 col-8">
                                         <strong style="font-size:80%;">{{$consent->status}}</strong>
-                                        <div style="font-size:80%;">
+                                        <div style="font-size:80%;width: 400px;">
                                             {{$consent->comment}}
                                         </div>
                                     </div>

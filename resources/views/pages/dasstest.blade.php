@@ -15,7 +15,7 @@ Test
 					<br><br><br>
 
 
-					<h6 class="h5weak">Self Rating Questioner (SRQ)</h6>
+					<h6 class="h5weak">Tes Dasss</h6>
 					<h3>Skrining Gangguan Mental</h3><br>
 					<p class="pstrong">
 						Kuesioner ini terdiri dari berbagai pernyataan yang mungkin sesuai dengan pengalaman Bapak/Ibu/Saudara dalam menghadapi situasi hidup sehari-hari.  Terdapat empat pilihan jawaban yang disediakan untuk setiap pernyataan yaitu:<br>
@@ -71,55 +71,28 @@ Test
 									{{$test->question}}
 								</td>
 								<td>
-									<input type="radio"  name="answer[{{$test->id}}]" id="no" value="1">
+									<input type="radio"  name="answer[{{$test->id}}]" id="0" value="0">
 									<label  for="yes"></label>
 								</td>
 								<td>
-									<input type="radio"  name="answer[{{$test->id}}]" id="no" value="1">
+									<input type="radio"  name="answer[{{$test->id}}]" id="1" value="1">
 									<label  for="yes"></label>
 								</td>
 								<td>
-									<input type="radio"  name="answer[{{$test->id}}]" id="no" value="2">
+									<input type="radio"  name="answer[{{$test->id}}]" id="2" value="2">
 									<label  for="yes"></label>
 								</td>
 								<td>
-									<input type="radio"  name="answer[{{$test->id}}]" id="no" value="3">
+									<input type="radio"  name="answer[{{$test->id}}]" id="3" value="3">
 									<label  for="yes"></label>
 								</td>
 							</tr>
 
+							<input type="hidden" name="testid[]" value="{{$test->id}}">
+
 							@endforeach
 
 						</table>
-
-
-<!-- 
-						<div class="col" style="padding-left: 70px">
-							{{$index+1}}. {{$test->question}}
-						</div>
-						<div class="form-group" style="padding-left: 100px">
-							<input  type="radio" name="answer[{{$test->id}}]" id="yes" value="0">
-							<label for="yes">0</label>
-
-							<br>
-
-							<input type="radio"  name="answer[{{$test->id}}]" id="no" value="1">
-							<label  for="yes">1</label>
-
-							<br>
-
-							<input type="radio"  name="answer[{{$test->id}}]" id="no" value="2">
-							<label  for="yes">2</label>
-
-							<br>
-
-							<input type="radio"  name="answer[{{$test->id}}]" id="no" value="3">
-							<label  for="yes">3</label>
-						</div>
-
-						<input type="hidden" name="testid[]" value="{{$test->id}}"> -->
-						
-
 
 						<input type="hidden" name="category_id" value="{{$test->category_id}}">
 

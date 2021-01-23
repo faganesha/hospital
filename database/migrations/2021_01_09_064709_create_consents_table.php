@@ -17,7 +17,8 @@ class CreateConsentsTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('category_id');
-            $table->string('status');
+            $table->string('status')->nullable();
+            $table->string('comment')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

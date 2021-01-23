@@ -10,19 +10,7 @@
             </a>
 
             <div class="social">
-                <a href="#0" class="icon">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#0" class="icon">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#0" class="icon">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#0" class="icon">
-                    <i class="fab fa-behance"></i>
-                </a>
-                <a href="#0" class="icon">
+                <a href="https://www.instagram.com/ketik.hasaka/?igshid=2y5c1t3fpeoi" target="_blank" class="icon">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>

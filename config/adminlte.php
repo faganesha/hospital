@@ -260,12 +260,12 @@ return [
         ],
         [
             'text'        => 'Hasil Tes DASS',
-            'url'         => '#',
+            'url'         => 'dasstestresult',
             'icon'        => 'fas fa-cubes',
         ],
         [
             'text'        => 'Hasil Tes BDI-II',
-            'url'         => '#',
+            'url'         => 'bditestresult',
             'icon'        => 'fas fa-cubes',
         ],
 
@@ -366,21 +366,21 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
                 ],
             ],

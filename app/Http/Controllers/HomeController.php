@@ -27,12 +27,13 @@ class HomeController extends Controller
     {
         $consents = Consent::where('user_id', Auth::user()->id)->get();
         $srq = Consent::where('user_id', Auth::user()->id)->where('category_id', '1')->get();
-        // $consents = Consent::where('user_id', Auth::user()->id)->get();
+        $dass = Consent::where('user_id', Auth::user()->id)->where('category_id', '2')->get();
+        $bdi = Consent::where('user_id', Auth::user()->id)->where('category_id', '3')->get();
         // $consents = Consent::where('user_id', Auth::user()->id)->get();
 
         // dd($consents);
 
-        return view ('home', compact('consents', 'srq'));
+        return view ('home', compact('consents', 'srq', 'bdi', 'dass'));
         // return view ('home');
     }
 

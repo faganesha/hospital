@@ -49,16 +49,16 @@ Test
 
 						@if($x>=6)
 						<div class="col-sm text-primary" style="padding-left: 70px">
-							<input type="hidden" name="status" value="Lulus">
-							<input type="hidden" name="comment" value="Tidak perlu konsultasi">
+							<input type="hidden" name="status" value="SRQ: Tidak lulus SRQ">
+							<input type="hidden" name="comment" value="Silahkan menghubungi kami untuk konsultasi">
 							<input type="hidden" name="category_id" value="1">
 						</div>
 
 						@else
 
 						<div class="col-sm text-danger" style="padding-left: 70px">
-							<input type="hidden" name="status" value="Tidak lulus">
-							<input type="hidden" name="comment" value="Silahkan menghubungi kami untuk konsultasi">
+							<input type="hidden" name="status" value="SRQ: Lulus SRQ">
+							<input type="hidden" name="comment" value="Tidak perlu konsultasi">
 							<input type="hidden" name="category_id" value="1">
 						</div>
 
