@@ -11,7 +11,7 @@
 
 	@foreach ($results as $index => $result)
 	@if($loop->iteration == 1)
-	<table>
+	<table class="table">
 		<tr>
 			<td>Nama</td>
 			<td>:</td>
@@ -127,4 +127,12 @@
 
 @section('css')
 <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+<script>
+	$('.mydatatable').DataTable({
+		 "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
+	});
+</script>
 @stop

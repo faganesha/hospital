@@ -251,6 +251,16 @@ return [
             'url'  => 'bditest',
             'icon' => 'fas fa-cube',
         ],
+        [
+            'text' => 'Tes MMPI',
+            'url'  => 'mmpitest',
+            'icon' => 'fas fa-cube',
+        ],
+        [
+            'text' => 'Tes MINI',
+            'url'  => 'minitest',
+            'icon' => 'fas fa-cube',
+        ],
 
         ['header' => 'Hasil Tes'],
         [
@@ -266,6 +276,16 @@ return [
         [
             'text'        => 'Hasil Tes BDI-II',
             'url'         => 'bditestresult',
+            'icon'        => 'fas fa-cubes',
+        ],
+        [
+            'text'        => 'Hasil Tes MMPI',
+            'url'         => 'mmpitestresult',
+            'icon'        => 'fas fa-cubes',
+        ],
+        [
+            'text'        => 'Hasil Tes Mini',
+            'url'         => 'minitestresult',
             'icon'        => 'fas fa-cubes',
         ],
 

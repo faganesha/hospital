@@ -11,7 +11,7 @@
 
 @include('layouts.js')
 
-@stack('script')
+<!-- @stack('script') -->
 
 </body>
 </html>

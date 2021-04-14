@@ -53,7 +53,7 @@
                             <i class="fas fa-bell" style="color:black"></i>
                         </a>
 
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" style="height: 200px; overflow-y:scroll; overflow-x: hidden;">
                             <li class="head text-light bg-dark">
                                 <div class="row">
                                     <div class="col-lg-12 col-sm-12 col-12">

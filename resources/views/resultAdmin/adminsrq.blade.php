@@ -50,7 +50,7 @@
 				{{$consent->user->gender}}
 			</td>
 			<td>
-				@if($consent->status == 'Tidak lulus SRQ')
+				@if($consent->status == 'SRQ: Tidak lulus SRQ')
 				<p style="color: crimson">{{$consent->status}}</p>
 				@else
 				<p style="color: #337ab7">{{$consent->status}}</p>

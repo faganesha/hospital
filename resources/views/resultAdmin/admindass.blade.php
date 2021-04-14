@@ -9,7 +9,7 @@
 @section('content')
 <div class="container-fluid">
 
-	<button onclick="location.href='/printtest'" type="button" class="btn btn-primary">Print</button>
+	<button onclick="location.href='/printdass'" type="button" class="btn btn-primary">Print</button>
 
 	<br><br>
 

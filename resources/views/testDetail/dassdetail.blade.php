@@ -11,7 +11,7 @@
 
 	@foreach ($results as $index => $result)
 	@if($loop->iteration == 1)
-	<table>
+	<table class="table " id="example">
 		<tr>
 			<td>Nama</td>
 			<td>:</td>
@@ -38,7 +38,7 @@
 
 	<br>
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-hover mydatatable" id="example">
 		<thead class="thead-dark">
 			<tr>
 				<th class="align-middle">
@@ -57,47 +57,16 @@
 
 		@foreach ($results as $index => $result)
 		<tr>
-			@if($index+1==1)
 			<td style="background-color:#FFA089">
 				<p >{{$index+1}}</p>
-			</td>
-			@elseif($index+1==2)
-			<td style="background-color:#68B6F0">
-				<p>{{$index+1}}</p>
-			</td>
-			@elseif($index+1==3)
-			<td style="background-color:#9FF068">
-				<p>{{$index+1}}</p>
-			</td>
-			@endif
-
-			@if($index+1==1)
+			</td>			
 			<td style="background-color:#FFA089">
 				<p >{{$result ->result->question}}</p>
 			</td>
-			@elseif($index+1==2)
-			<td style="background-color:#68B6F0">
-				<p>{{$result ->result->question}}</p>
-			</td>
-			@elseif($index+1==3)
-			<td style="background-color:#9FF068">
-				<p>{{$result ->result->question}}</p>
-			</td>
-			@endif
-
-			@if($index+1==1)
 			<td style="background-color:#FFA089">
 				<p >{{$result ->answer}}</p>
 			</td>
-			@elseif($index+1==2)
-			<td style="background-color:#68B6F0">
-				<p>{{$result ->answer}}</p>
-			</td>
-			@elseif($index+1==3)
-			<td style="background-color:#9FF068">
-				<p>{{$result ->answer}}</p>
-			</td>
-			@endif
+			
 		</tr>
 		@endforeach
 		<tr>
@@ -105,8 +74,11 @@
 				@csrf
 				@foreach($dasstests as $dass)
 
-				<td colspan="2">
-					Total Skor Variable Depresi
+				<td>
+					<p style="visibility: hidden">43</p>
+				</td>
+				<td>Total Skor Variable Depresi
+					
 				</td>
 				@if($dass->dass_depression == null)
 				<td>
@@ -120,7 +92,10 @@
 
 			</tr>
 			<tr>
-				<td colspan="2">
+				<td>
+					<p style="visibility: hidden">44</p>
+				</td>
+				<td>
 					Total Skor Variable Kecemasan
 				</td>
 				@if($dass->dass_anxiety == null)
@@ -134,7 +109,10 @@
 				@endif
 			</tr>
 			<tr>
-				<td colspan="2">
+				<td>
+					<p style="visibility: hidden">45</p>
+				</td>
+				<td>
 					Total Skor Variable Stress
 				</td>
 				@if($dass->dass_stress == null)
@@ -161,4 +139,12 @@
 
 @section('css')
 <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+<script>
+	$('.mydatatable').DataTable({
+		 "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
+	});
+</script>
 @stop

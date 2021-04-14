@@ -98,7 +98,7 @@ class TestController extends Controller
     }
 
     public function destroy($id){
-    	$test = Test::with('test')->where('id', $id)->delete();
+    	$test = Test::where('id', $id)->delete();
     	return redirect()->back();
     }
 }

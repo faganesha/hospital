@@ -104,7 +104,7 @@ Test
 				<div class="card-body">
 					<div class="col-sm" style="padding-left: 70px">
 						Jika dari salah satu variabel anda terindikasi memiliki masalah psikologis yang ditandai oleh tulisan berwarna merah, harap menghubungi tenaga kesehatan <br> <br>
-						<a href="https://wa.me/6285157621774" target="_blank"><u>Klik untuk konsultasi Online</u></a>
+						<a href="https://wa.me/62818272255" class="buttonoverlay" target="_blank"><u>Klik untuk konsultasi Online<u></a>
 					</div>
 				</div>
 			</div>

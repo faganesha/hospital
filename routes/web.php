@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/test', 'HomeController@test')->name('test');
+
 Route::get('/', function () {
 	return view('landing');
 });
+
 
 Auth::routes();
 
@@ -37,11 +40,23 @@ Route::group(['middleware' => ['checkLogin']], function(){
 	Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 	Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/', 'HomeController@index')->name('home');
+	// Route::get('/', 'HomeController@index')->name('home');
+
+	Route::get('/qrcode', 'HomeController@qrcode')->name('qrcode');
 
 	Route::get('/testsrq', 'TestController@indexsrq');
 	Route::get('/testbdi', 'TestController@indexbdi');
 	Route::get('/testdass', 'TestController@indexdass');
+
+	//mmpi cust
+	Route::get('mmpi', 'MmpiController@index')->name('mmpi.index');
+	Route::post('mmpi/insert', 'MmpiController@answer')->name('mmpi.insert');
+    Route::get('resultmmpi', 'MmpiController@user')->name('mmpi.user');
+
+	//mini cust
+	Route::get('mini', 'MiniController@index')->name('mini.index');
+	Route::post('mini/insert', 'MiniController@answer')->name('mini.insert');
+    Route::get('resultmini', 'MiniController@user')->name('mini.user');
 });
 
 
@@ -80,6 +95,25 @@ Route::group(['middleware' => ['auth', 'adminMiddleware']], function(){
 	Route::post('dassupdate', 'ResultController@dasstestupdate')->name('dassupdate');
 
 	Route::get('printsrq', 'ResultController@printsrq');
+	Route::get('printbdi', 'ResultController@printbdi');
+	Route::get('printdass', 'ResultController@printdass');
 
+	//---------------------------------------------------------------------------------------------------
+
+	//mmpi admin
+	Route::get('mmpitest', 'MmpiController@admin')->name('mmpi.admin');
+	Route::get('mmpi/input', 'MmpiController@input')->name('mmpi.input');
+	Route::post('mmpi/store', 'MmpiController@store')->name('mmpi.store');
+	Route::get('mmpi/{id}', 'MmpiController@destroy')->name('mmpi.delete');
+	Route::get('mmpitestresult', 'MmpiController@result')->name('mmpi.result');
+	Route::get('mmpi/detail/{id}', 'MmpiController@detail')->name('mmpi.detail');
+
+	//mini admin
+	Route::get('minitest', 'MiniController@admin')->name('mini.admin');
+	Route::get('mini/input', 'MiniController@input')->name('mini.input');
+	Route::post('mini/store', 'MiniController@store')->name('mini.store');
+	Route::get('mini/{id}', 'MiniController@destroy')->name('mini.delete');
+	Route::get('minitestresult', 'MiniController@result')->name('mini.result');
+	Route::get('mini/detail/{id}', 'MiniController@detail')->name('mini.detail');
 });
 

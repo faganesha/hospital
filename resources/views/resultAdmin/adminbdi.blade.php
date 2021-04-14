@@ -3,13 +3,13 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-<h1>Hasil Tes SRQ</h1>
+<h1>Hasil Tes BDI</h1>
 @stop
 
 @section('content')
 <div class="container-fluid">
 
-	<button onclick="location.href='/printsrq'" type="button" class="btn btn-primary" >Print</button>
+	<button onclick="location.href='/printbdi'" type="button" class="btn btn-primary" >Print</button>
 
 	<br><br>
 
@@ -50,7 +50,7 @@
 				{{$consent->user->gender}}
 			</td>
 			<td>
-				@if($consent->status == 'Tidak lulus BDI')
+				@if($consent->status == 'BDI: Tidak Lulus BDI')
 				<p style="color: crimson">{{$consent->comment}}</p>
 				@else
 				<p style="color: #337ab7">{{$consent->comment}}</p>

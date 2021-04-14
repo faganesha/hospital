@@ -31,7 +31,6 @@ Test
 					<form method="POST" action="{{url('test/insert')}}">
 						{{csrf_field()}}
 
-
 						@foreach ($tests as $index => $test)
 						<div class="col" style="padding-left: 70px">
 							{{$index+1}}. {{$test->question}}

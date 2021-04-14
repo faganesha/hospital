@@ -14,6 +14,8 @@
 		@yield('title')
 	</title>
 
+	@yield('css')
+
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="img/favicon.ico" />
 

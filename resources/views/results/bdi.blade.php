@@ -155,7 +155,7 @@ Test
 					<div class="col-sm" style="padding-left: 70px">
 						<br>Depresi Rendah<br>
 						Kesimpulan: Disarankan menghubungi tenaga kesehatan.
-						<a href="https://wa.me/6285157621774" style="padding-left: 70px" target="_blank">Klik untuk konsultasi Online</a>
+						<a href="https://wa.me/62818272255" class="buttonoverlay" style="padding-left: 70px" target="_blank"><u>Klik untuk konsultasi Online<u></a>
 					</div>
 
 					@elseif($x>=31 && $x<=40)
@@ -163,7 +163,7 @@ Test
 					<div class="col-sm text-danger" style="padding-left: 70px">
 						<br>Depresi Sedang<br>
 						Kesimpulan: Wajib menghubungi tenaga kesehatan.
-						<a href="https://wa.me/6285157621774" style="padding-left: 70px" target="_blank">Klik untuk konsultasi Online</a>
+						<a href="https://wa.me/62818272255" class="buttonoverlay" style="padding-left: 70px" target="_blank"><u>Klik untuk konsultasi Online<u></a>
 					</div>
 
 					@elseif($x>=41)
@@ -171,7 +171,7 @@ Test
 					<div class="col-sm text-danger" style="padding-left: 70px">
 						<br>Depresi Berat<br>
 						Kesimpulan: Wajib menghubungi tenaga kesehatan.
-						<a href="https://wa.me/6285157621774" style="padding-left: 70px" target="_blank">Klik untuk konsultasi Online</a>
+						<a href="https://wa.me/62818272255" class="buttonoverlay" style="padding-left: 70px" target="_blank"><u>Klik untuk konsultasi Online<u></a>
 					</div>
 				</div>
 				@endif

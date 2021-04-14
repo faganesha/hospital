@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -20,10 +19,12 @@ class ResultController extends Controller
 			$data[$i]=[
 				'user_id'=>Auth::user()->id,
 				'test_id'=>$Request->testid[$i],
-				'answer' =>$Request->answer[$Request->testid[$i]],
+				'answer' =>$Request->answer[$Request->testid[$i]]??'NULL',
 				'category_id' =>$Request->category_id,
 			];
 		}
+
+		// dd($data);
 
 		Result::insert($data);
 
@@ -91,7 +92,7 @@ class ResultController extends Controller
 
 	public function dasstestdetail($id){
 		$results=Result::where('user_id', $id)->where('category_id', 2)->get();
-		$dasstests=Consent::where('category_id', 2)->get();
+		$dasstests=Consent::where('category_id', 2)->where('user_id', $id)->get();
 
 		return view ('testDetail.dassdetail', compact('results', 'dasstests'));
 	}
@@ -123,6 +124,8 @@ class ResultController extends Controller
 			'dass_stress'=> 'required',
 		]);
 
+		dd($validate);
+
 		Consent::whereId($Request->id)->update($validate);
 
 		return redirect ('/dasstestresult');
@@ -138,7 +141,25 @@ class ResultController extends Controller
 		$srqtests=Consent::where('category_id', 1)->get();
 
 		$pdf = PDF::loadview('print.srq', ['srqtests'=>$srqtests]);
-		return $pdf->download('laporan-tes-srq-pdf');
+		return $pdf->download('laporan-tes-srq.pdf');
+
+		// return view ('print.srq', compact('srqtests'));
+	}
+
+	public function printbdi(){
+		$srqtests=Consent::where('category_id', 3)->get();
+
+		$pdf = PDF::loadview('print.bdi', ['srqtests'=>$srqtests]);
+		return $pdf->download('laporan-tes-bdi.pdf');
+
+		// return view ('print.srq', compact('srqtests'));
+	}
+
+	public function printdass(){
+		$srqtests=Consent::where('category_id', 2)->get();
+
+		$pdf = PDF::loadview('print.dass', ['srqtests'=>$srqtests]);
+		return $pdf->download('laporan-tes-dass.pdf');
 
 		// return view ('print.srq', compact('srqtests'));
 	}

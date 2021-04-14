@@ -60,7 +60,7 @@ Test
 
 					<br>
 
-					<a href="https://wa.me/6285157621774" class="buttonoverlay" style="padding-left: 70px" target="_blank"><u>Klik untuk konsultasi Online<u></a>
+					<a href="https://wa.me/62818272255" class="buttonoverlay" style="padding-left: 70px" target="_blank"><u>Klik untuk konsultasi Online<u></a>
 
 						@endif
 					</div>

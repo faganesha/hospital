@@ -38,7 +38,7 @@
 
 	<br>
 
-	<table class="table table-bordered">
+	<table class="table table-bordered table-hover mydatatable" id="example">
 		<thead class="thead-dark">
 			<tr>
 				<th class="align-middle">
@@ -80,7 +80,10 @@
 		@endforeach
 
 		<tr>
-			<td colspan="2">
+			<td>
+				
+			</td>
+			<td>
 				<strong>Status</strong>
 			</td>
 			<td>
@@ -100,4 +103,12 @@
 
 @section('css')
 <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+<script>
+	$('.mydatatable').DataTable({
+		 "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
+	});
+</script>
 @stop
